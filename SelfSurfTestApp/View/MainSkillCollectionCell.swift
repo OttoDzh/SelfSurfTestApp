@@ -36,7 +36,6 @@ class MainSkillCollectionCell: UICollectionViewCell {
     
     func setupConstraints() {
         
-        
         Helper.tamicOff(views: [skill,deleteSkillButton])
         
         addSubview(skill)

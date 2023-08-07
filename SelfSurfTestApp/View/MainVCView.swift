@@ -22,8 +22,6 @@ class MainVCView: UIView {
     let aboutMeLabel = UILabel(text: "О себе", font: ODFonts.regulatTextFont)
     let aboutMeText = UITextView()
     
-    
-
     init(){
         super.init(frame: CGRect())
         setupViews()
@@ -36,7 +34,6 @@ class MainVCView: UIView {
         
         scrollView.showsVerticalScrollIndicator = true
         scrollView.alwaysBounceVertical = true
-    
         
         profileImage.contentMode = .scaleAspectFill
         profileImage.clipsToBounds = true
@@ -57,16 +54,11 @@ class MainVCView: UIView {
         profileSkillCollection = UICollectionView(frame: CGRect(), collectionViewLayout: creaCompositionalLayoutForSkill())
         profileSkillCollection.register(MainSkillCollectionCell.self, forCellWithReuseIdentifier: MainSkillCollectionCell.reuseId)
         
-        
         aboutMeLabel.numberOfLines = 10
         
         aboutMeText.text = "Hello, im Otto! I'm a novice in Ios and i'm working hard"
         aboutMeText.font = ODFonts.avenirRoman
-        
-        
-   
-        
-        
+
     }
     
     func setupConstraints() {
@@ -86,7 +78,6 @@ class MainVCView: UIView {
         contenView.addSubview(profileSkillCollection)
         contenView.addSubview(aboutMeLabel)
         contenView.addSubview(aboutMeText)
-        
         
         NSLayoutConstraint.activate([scrollView.topAnchor.constraint(equalTo:topAnchor),
                                      scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -149,7 +140,6 @@ class MainVCView: UIView {
         //Item
         let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(80),
                                               heightDimension: .fractionalHeight(1.0))
-        
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         //Group
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), // ???
@@ -161,15 +151,10 @@ class MainVCView: UIView {
         groups.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 0, bottom: 0, trailing: 0)
         //Section
         let section = NSCollectionLayoutSection(group: groups)
-       
-      
         return section
         
-    
     }
-    
-    
-    required init?(coder: NSCoder) {
+     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

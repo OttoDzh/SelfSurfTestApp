@@ -91,10 +91,7 @@ extension MainViewController: UICollectionViewDataSource , UICollectionViewDeleg
                     FethDataService.saveData(skills: self.skills)
                     self.mainView.profileSkillCollection.reloadData()
                 }
-                
-                
             })
-            
             let cancelAction = UIAlertAction(title: "отмена", style: .destructive)
             alertController.addAction(saveAction)
             alertController.addAction(cancelAction)
